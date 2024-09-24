@@ -25,4 +25,18 @@ class Cliente
         @email = gets.chomp.downcase
         @verificar.email(@email)
     end
+
+    def cadastrar
+        puts "Cadastrar Cliente"
+        print "Nome completo: "
+        nome = gets.chomp.upcase
+        print "Endereço completo: "
+        endereco = gets.chomp
+        cadastrar_cep
+        cadastrar_telefone
+        cadastrar_email
+        
+
+        @dados << {nome: nome, endereco: endereco, cep: @cep, telefone: @telefone, email: @email}
+    end
 end
