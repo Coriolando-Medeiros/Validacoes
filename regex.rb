@@ -39,4 +39,26 @@ class Cliente
 
         @dados << {nome: nome, endereco: endereco, cep: @cep, telefone: @telefone, email: @email}
     end
+
+    def ver_clientes
+        puts "Ver Clientes"
+        if !@dados.empty?
+            @dados.each_with_index do |dado, indice|
+                puts "#{indice + 1}º - Nome: #{dado[:nome]} - Endereço: #{dado[:endereco]} - CEP: #{dado[:cep]}- Telefone: #{dado[:telefone]} - E-mail: #{dado[:email]}"
+            end
+        else
+            puts "Não existe clientes cadastrados!"
+            puts "Deseja cadastrar? 1 - Sim | Enter - Não"
+            print "Opção: "
+            opcao = gets.chomp
+            if opcao == '1'
+                cadastrar
+            elsif opcao == ""
+                puts "Saindo..."
+                return
+            else
+                puts "Opção Inválida!"
+            end
+        end
+    end
 end
