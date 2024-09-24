@@ -101,3 +101,33 @@ class Validacoes
         end
     end
 end
+
+def menu
+    puts "Sistema de cadastro de cliente"
+    cadastrar = Cliente.new
+
+    loop do
+        puts "         Menu"
+        puts "\n"
+        puts "1 - Cadastrar"
+        puts "2 - Ver clientes"
+        puts "0 - Sair"
+        puts "\n"
+        print "Opção: "
+
+        escolha = gets.chomp.to_i
+
+        if escolha == 1
+            cadastrar.cadastrar
+        elsif escolha == 2
+            cadastrar.ver_clientes
+        elsif escolha == 0
+            puts "Saindo..."
+            return
+        else
+            puts "Escolha Inválida! Tente novamente"
+        end
+    end
+end
+
+menu
