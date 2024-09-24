@@ -78,4 +78,15 @@ class Validacoes
             @cliente.cadastrar_telefone
         end
     end
+
+    def email(email)
+        regex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/
+
+        if email =~ regex
+        
+        else
+            puts "Email inválido!"
+            @cliente.cadastrar_cep
+        end
+    end
 end
