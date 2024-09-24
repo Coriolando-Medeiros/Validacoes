@@ -89,4 +89,15 @@ class Validacoes
             @cliente.cadastrar_cep
         end
     end
+
+    def cep(cep)
+        regex = /^\d{5}-\d{3}$/
+
+        if cep =~ regex
+            
+        else
+            puts "CEP inválido!"
+            @cliente.cadastrar_cep
+        end
+    end
 end
