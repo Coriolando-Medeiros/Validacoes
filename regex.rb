@@ -62,3 +62,20 @@ class Cliente
         end
     end
 end
+
+class Validacoes
+    def initialize(cliente)
+        @cliente = cliente
+    end
+
+    def telefone(telefone)
+        regex = /^(\(\d{2}\)\s?9?\d{4}-\d{4})|(\d{2}\s9?\d{4}-\d{4})|(\d{2}\s?9?\d{8})$/
+
+        if telefone =~ regex
+            
+        else
+            puts "Telefone inválido!"
+            @cliente.cadastrar_telefone
+        end
+    end
+end
